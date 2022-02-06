@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const Box = new mongoose.Schema({
@@ -5,9 +6,9 @@ const Box = new mongoose.Schema({
     type: String,
     required: true,
   },
-  files: [{ type: mongoose.Schema.Types.ObjectId, ref: "File" }]
+  files: [{ type: mongoose.Schema.Types.ObjectId, ref: 'File' }]
 }, {
-  timestamps: true,
+  timestamps: true
 });
 
 module.exports = mongoose.model("Box", Box);
