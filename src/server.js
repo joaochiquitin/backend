@@ -26,7 +26,6 @@ mongoose.connect('mongodb+srv://joaopedrochiquitin:painapel123@cluster0.enzys.mo
 app.use((req, res, next) => {
   req.io = io;
 
-  res.setHeader('Access-Control-Allow-Origin', '*');
   return next();
 });
 
