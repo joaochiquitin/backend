@@ -5,12 +5,7 @@ const cors = require('cors');
 
 const app = express();
 
-const corsOptions = {
-  origin: '*',
-  optionsSuccessStatus: 200,
-}
-
-app.use(cors(corsOptions))
+app.use(cors())
 
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
@@ -31,6 +26,7 @@ mongoose.connect('mongodb+srv://joaopedrochiquitin:painapel123@cluster0.enzys.mo
 app.use((req, res, next) => {
   req.io = io;
 
+  res.setHeader('Access-Control-Allow-Origin', '*');
   return next();
 });
 
